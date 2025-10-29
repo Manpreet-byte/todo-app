@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import './App.css'
 
-const API_URL = 'http://localhost:5000/api/todos'
+const API_URL = `${import.meta.env.VITE_API_URL}/api/todos` || 'http://localhost:5000/api/todos'
 
 function App() {
   const [todos, setTodos] = useState([])
@@ -77,7 +77,7 @@ function App() {
     <div className="app">
       <div className="todo-container">
         <h1>📝 My Todo List</h1>
-        <p className="subtitle">Connected to MongoDB Compass</p>
+        <p className="subtitle">Connected to MongoDB Atlas</p>
         
         {error && <div className="error-banner">{error}</div>}
         
